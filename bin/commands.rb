@@ -4,9 +4,10 @@ class RailsCLI < Thor
 
   class_option :verbose, :type => :boolean, :aliases => "-v"
   
-  desc "generateTailwind THING PARAMETERS", "Generate Tailwind 2.0 Views"
-  def generateTailwind
-    # ...
+  desc "generateTailwindUi <UI NAME> <PARAMETERS>", "Generate TailwindUi 2.0 Views"
+  def generateTailwindUi(userInput,secondInput)
+    puts userInput
+    puts secondInput
   end
 
 end
