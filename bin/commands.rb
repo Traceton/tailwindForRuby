@@ -1,14 +1,18 @@
 # !/usr/bin/commands ruby
 require 'thor'
-class RailsCLI < Thor
+class Generate < Thor
+  class View < Thor::Group
+    include Thor::Actions
 
-  class_option :verbose, :type => :boolean, :aliases => "-v"
-  
-  desc "generateTailwindUi <UI NAME> <PARAMETERS>", "Generate TailwindUi 2.0 Views"
-  def generateTailwindUi(userInput,secondInput)
-    puts userInput
-    puts secondInput
+    argument :view_attributes, optional: true, type: :hash
+
+    def generate
+      puts view_attributes
+    end
+
   end
 
 end
-RailsCLI.start(ARGV)
+Generate.start(ARGV)
+
+# cd bin, ruby commands.rb 
