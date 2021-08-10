@@ -1,5 +1,7 @@
 # !/usr/bin/commands ruby
 
-user_input = ARGV
+first_arg, second_arg, *the_rest = ARGV
 
-puts user_input.to_s
+puts "first arg - #{first_arg}"
+puts "second arg - #{second_arg}"
+puts "other args - #{the_rest}"
